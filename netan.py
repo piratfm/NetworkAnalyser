@@ -87,13 +87,13 @@ class CentralWidget(QSplitter):
         self.setSizes([1, 5, 1])
 
         if start_freq is None:
-            start_freq = float(self.settings.value('spectrum/start_freq', 190e6))
+            start_freq = self.settings.value<float>('spectrum/start_freq', 190e6)
 
         if bandwidth is None:
-            bandwidth = float(self.settings.value('spectrum/bandwidth', 50e6))
+            bandwidth = self.settings.value<float>('spectrum/bandwidth', 50e6)
 
         if numpts is None:
-            numpts = int(self.settings.value('spectrum/num_samps', 6000))
+            numpts = self.settings.value<int>('spectrum/num_samps', 6000)
 
         print start_freq, bandwidth, numpts
 
